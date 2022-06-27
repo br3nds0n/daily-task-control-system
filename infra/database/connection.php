@@ -1,6 +1,6 @@
 <?php
 
-$server    = "127.0.0.1";
+$server   = "127.0.0.1";
 $user     = "root";
 $password = "12345678";
 $database = "tarefasdiarias";
