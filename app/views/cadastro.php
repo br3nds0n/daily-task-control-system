@@ -7,7 +7,7 @@
   <title>Cadastro | Usuário</title>
 </head>
 <body>
-  <form action="" id="form_cadastro">
+  <form action="../controller/cadastro_user.php" method="post" id="form_cadastro">
     nome:
     <input type="text" name="nome"> <br>
 
