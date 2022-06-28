@@ -7,8 +7,10 @@ $database = "tarefasdiarias";
 
 $con = mysqli_connect($server, $user, $password, $database);
 
-if (mysql_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+if(!$con){
+  echo "Falha na conexao: " . mysqli_connect_error();
+}else{
+  echo "Conexao realizada com sucesso";
 }
 
 mysqli_select_db($con, $database);
