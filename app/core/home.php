@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['login']) and !isset($_SESSION['senha'])) {
-  header("Location:../views/login.php");
+  header("Location:../views/login.php?erro=1");
 }
 ?>
 <!DOCTYPE html>

@@ -1,11 +1,13 @@
-<?php 
-  if (isset($_GET['erro'])) {
-    if ($_GET['erro'] == 1) {
-      $erro = "Acesso Negado!";
+<?php
+if(isset($_GET['erro'])){
+    if($_GET['erro'] == 1){
+        $erro = "Acesso Negado!";
+    }else if($_GET['erro'] == 2){
+        $erro = "E-mail ou senha inválidos!";
     }
-  } else {
+}else{
     $erro = "";
-  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +20,7 @@
 </head>
 <body>
   <h3>Login</h3>
-  <form action="">
+  <form action="../controller/verifica_login.php" method="post">
     <input type="text" name="login"> <br>
     <input type="password" name="senha"> <br>
     <button>Enviar</button>
