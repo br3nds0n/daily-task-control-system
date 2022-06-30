@@ -11,7 +11,7 @@
     nome:
     <input type="text" name="nome"> <br>
 
-    e-mail
+    e-mail:
     <input type="email" name="email"> <br>
 
     senha:
