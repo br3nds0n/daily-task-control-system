@@ -1,14 +1,14 @@
 <?php
-if(isset($_GET['erro'])){
-    if($_GET['erro'] == 1){
-        $erro = "Acesso Negado!";
-    }else if($_GET['erro'] == 2){
-        $erro = "E-mail ou senha inválidos!";
-    }else if($_GET['erro'] == 3){
-      $erro = "Logout realizado com sucesso!";
+if(isset($_GET['msg'])){
+    if($_GET['msg'] == 1){
+        $msg = "Acesso Negado!";
+    }else if($_GET['msg'] == 2){
+        $msg = "E-mail ou senha inválidos!";
+    }else if($_GET['msg'] == 3){
+      $msg = "Logout realizado com sucesso!";
     }
 }else{
-    $erro = "";
+    $msg = "";
 }
 ?>
 
@@ -26,7 +26,7 @@ if(isset($_GET['erro'])){
     <input type="text" name="login"> <br>
     <input type="password" name="senha"> <br>
     <button>Enviar</button>
-    <span><?php echo $erro; ?></span>
+    <span><?php echo $msg; ?></span>
   </form>
 
   <a href="./cadastro.php">Cadastre-se</a>

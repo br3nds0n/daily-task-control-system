@@ -26,6 +26,6 @@ if(mysqli_num_rows($result) > 0) {
   echo $email;
   echo $senha;
 
-  header("Location:../views/login.php?erro=2");
+  header("Location:../views/login.php?msg=2");
 }
 ?>

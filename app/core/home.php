@@ -1,9 +1,7 @@
 <?php
-session_start();
-if (!isset($_SESSION['login']) and !isset($_SESSION['perfil'])) {
-  header("Location:../views/login.php?erro=1");
-}
+require_once("../controller/bloqueio.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,8 +11,8 @@ if (!isset($_SESSION['login']) and !isset($_SESSION['perfil'])) {
   <title>Home</title>
 </head>
 <body>
-  <a href="">Cadastrar Tarefa</a>
-  <a href="">Listar Tarefas</a> 
+  <a href="../views/cadastro_tarefa.php">Cadastrar Tarefa</a>
+  <a href="../core/home.php">Listar Tarefas</a> 
   <a href="../controller/sair.php">Sair</a><br>
 
   <table>
