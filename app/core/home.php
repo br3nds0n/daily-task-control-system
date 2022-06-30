@@ -1,5 +1,5 @@
 <?php
-require_once("../controller/bloqueio.php");
+require_once("./bloqueio.php");
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ require_once("../controller/bloqueio.php");
 <body>
   <a href="../views/cadastro_tarefa.php">Cadastrar Tarefa</a>
   <a href="../core/home.php">Listar Tarefas</a> 
-  <a href="../controller/sair.php">Sair</a><br>
+  <a href="../core/sair.php">Sair</a><br>
 
   <table>
     <tr>

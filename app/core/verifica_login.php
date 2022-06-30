@@ -18,7 +18,7 @@ if(mysqli_num_rows($result) > 0) {
     $_SESSION['email']  = $dados['email'];
     $_SESSION['perfil'] = $dados['perfil_cod'];
 
-    header('location:../core/home.php');
+    header('location:./home.php');
 } else {
   unset ($_SESSION['login']);
   unset ($_SESSION['senha']);

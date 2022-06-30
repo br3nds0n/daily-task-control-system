@@ -22,7 +22,7 @@ if(isset($_GET['msg'])){
 </head>
 <body>
   <h3>Login</h3>
-  <form action="../controller/verifica_login.php" method="post">
+  <form action="../core/verifica_login.php" method="post">
     <input type="text" name="login"> <br>
     <input type="password" name="senha"> <br>
     <button>Enviar</button>

@@ -1,5 +1,5 @@
 <?php
-require_once("../controller/bloqueio.php");
+require_once("../core/bloqueio.php");
 
 $sql = "SELECT * FROM categoria_tarefa";
 $result_cat = mysqli_query($con, $sql);
@@ -15,7 +15,7 @@ $result_cat = mysqli_query($con, $sql);
 <body>
   <a href="cadastro_tarefa.php">Cadastrar Tarefa</a>
   <a href="../core/home.php">Listar Tarefas</a> 
-  <a href="../controller/sair.php">Sair</a><br>
+  <a href="../core/sair.php">Sair</a><br>
 
   <h3>Tarefa</h3>
   <form action="../controller/cadastro_tarefa.php" method="post" id="form_cadastro">
