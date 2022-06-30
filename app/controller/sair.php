@@ -8,6 +8,6 @@ unset($_SESSION['perfil']);
 
 session_destroy();
 
-header('location:../views/login.php?erro=3');
+header('location:../views/login.php?msg=3');
 
 ?>
