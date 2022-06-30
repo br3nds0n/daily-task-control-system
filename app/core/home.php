@@ -1,5 +1,6 @@
 <?php
-if (!isset($_SESSION['login']) and !isset($_SESSION['senha'])) {
+session_start();
+if (!isset($_SESSION['login']) and !isset($_SESSION['perfil'])) {
   header("Location:../views/login.php?erro=1");
 }
 ?>
@@ -14,7 +15,7 @@ if (!isset($_SESSION['login']) and !isset($_SESSION['senha'])) {
 <body>
   <a href="">Cadastrar Tarefa</a>
   <a href="">Listar Tarefas</a> 
-  <a href="">Sair</a><br>
+  <a href="../controller/sair.php">Sair</a><br>
 
   <table>
     <tr>

@@ -4,6 +4,8 @@ if(isset($_GET['erro'])){
         $erro = "Acesso Negado!";
     }else if($_GET['erro'] == 2){
         $erro = "E-mail ou senha inválidos!";
+    }else if($_GET['erro'] == 3){
+      $erro = "Logout realizado com sucesso!";
     }
 }else{
     $erro = "";
