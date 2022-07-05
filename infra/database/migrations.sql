@@ -37,7 +37,7 @@ CREATE TABLE `categoria_tarefa` (
 
 LOCK TABLES `categoria_tarefa` WRITE;
 /*!40000 ALTER TABLE `categoria_tarefa` DISABLE KEYS */;
-INSERT INTO `categoria_tarefa` VALUES (1,'Trabalho'),(2,'Escola'),(3,'Estágio'),(4,'Compra');
+INSERT INTO `categoria_tarefa` VALUES (1,'Trabalho'),(2,'Escola'),(3,'Estagio'),(4,'Compra');
 /*!40000 ALTER TABLE `categoria_tarefa` ENABLE KEYS */;
 UNLOCK TABLES;
 
