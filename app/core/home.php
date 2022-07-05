@@ -2,7 +2,7 @@
 require_once("./bloqueio.php");
 
 $cod = $_SESSION['cod'];
-$sql = "SELECT * FROM tarefas WHERE usuario_cod = $cod";
+$sql = "SELECT * FROM tarefas WHERE usuario_cod = $cod ORDER BY data ASC";
 
 $result_tarefas = mysqli_query($con, $sql);
 ?>
@@ -32,7 +32,9 @@ $result_tarefas = mysqli_query($con, $sql);
       <td><?= $tarefa['titulo'] ?></td>
       <td><?= date("d/m/Y", strtotime($tarefa['data'])); ?></td>
       <td><?= $tarefa['hora'] ?></td>
-      <td></td>
+      <td>
+        <a href="../views/editar_tarefa.php?cod=<?= $tarefa['cod'] ?>">Editar</a>
+      </td>
     </tr>
     <?php } ?>
   </table>
