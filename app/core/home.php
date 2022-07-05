@@ -26,7 +26,12 @@ $result_tarefas = mysqli_query($con, $sql);
 
   <table border = "1">
     <tr>
+      <?php 
+        if ($_SESSION['perfil'] == 1) {
+      ?>
+      
       <td>Usuario</td>
+      <?php } ?>
       <td>Titulo</td>
       <td>Data</td>
       <td>Hora</td>
@@ -34,7 +39,11 @@ $result_tarefas = mysqli_query($con, $sql);
     </tr>
     <?php foreach ($result_tarefas as $tarefa){ ?>
     <tr>
+    <?php 
+        if ($_SESSION['perfil'] == 1) {
+      ?>
       <td><?= $tarefa['nome'] ?></td>
+      <?php } ?>
       <td><?= $tarefa['titulo'] ?></td>
       <td><?= date("d/m/Y", strtotime($tarefa['data'])); ?></td>
       <td><?= $tarefa['hora'] ?></td>
