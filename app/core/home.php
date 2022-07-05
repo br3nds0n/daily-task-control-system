@@ -1,5 +1,10 @@
 <?php
 require_once("./bloqueio.php");
+
+$cod = $_SESSION['cod'];
+$sql = "SELECT * FROM tarefas WHERE usuario_cod = $cod";
+
+$result_tarefas = mysqli_query($con, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -15,19 +20,21 @@ require_once("./bloqueio.php");
   <a href="../core/home.php">Listar Tarefas</a> 
   <a href="../core/sair.php">Sair</a><br>
 
-  <table>
+  <table border = "1">
     <tr>
       <td>Titulo</td>
       <td>Data</td>
       <td>Hora</td>
       <td>Opções</td>
     </tr>
+    <?php foreach ($result_tarefas as $tarefa){ ?>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><?= $tarefa['titulo'] ?></td>
+      <td><?= date("d/m/Y", strtotime($tarefa['data'])); ?></td>
+      <td><?= $tarefa['hora'] ?></td>
       <td></td>
     </tr>
+    <?php } ?>
   </table>
 </body>
 </html>

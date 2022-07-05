@@ -9,7 +9,7 @@ $senha = md5($_POST['senha']);
 $query = "select * from $database.usuario where email = '".$email."' and senha = '".$senha."'";
 
 $result = mysqli_query($con, $query);
-var_dump($result);
+
 if(mysqli_num_rows($result) > 0) {
     $dados = mysqli_fetch_array($result);
     
