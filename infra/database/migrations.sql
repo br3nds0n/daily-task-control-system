@@ -1,16 +1,15 @@
-CREATE DATABASE  IF NOT EXISTS `tarefasdiarias` 
-/*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE  IF NOT EXISTS `tarefasdiarias` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `tarefasdiarias`;
--- MySQL dump 10.13  Distrib 8.0.29, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.38, for Linux (x86_64)
 --
 -- Host: localhost    Database: tarefasdiarias
 -- ------------------------------------------------------
--- Server version	8.0.29-0ubuntu0.20.04.3
+-- Server version	5.7.38-0ubuntu0.18.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -24,12 +23,12 @@ USE `tarefasdiarias`;
 
 DROP TABLE IF EXISTS `categoria_tarefa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categoria_tarefa` (
-  `cod` int NOT NULL,
+  `cod` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
   PRIMARY KEY (`cod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,12 +47,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `perfil_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perfil_usuario` (
-  `cod` int NOT NULL AUTO_INCREMENT,
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   PRIMARY KEY (`cod`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,21 +71,21 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tarefas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tarefas` (
-  `cod` int NOT NULL AUTO_INCREMENT,
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(45) NOT NULL,
   `data` date NOT NULL,
   `hora` time NOT NULL,
   `descricao` varchar(255) DEFAULT NULL,
-  `usuario_cod` int NOT NULL,
-  `categoria_cod` int NOT NULL,
+  `usuario_cod` int(11) NOT NULL,
+  `categoria_cod` int(11) NOT NULL,
   PRIMARY KEY (`cod`),
   KEY `fk_tarefas_usuario1` (`usuario_cod`),
   KEY `fk_tarefas_categoria1` (`categoria_cod`),
   CONSTRAINT `fk_tarefas_categoria1` FOREIGN KEY (`categoria_cod`) REFERENCES `categoria_tarefa` (`cod`),
   CONSTRAINT `fk_tarefas_usuario1` FOREIGN KEY (`usuario_cod`) REFERENCES `usuario` (`cod`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +94,6 @@ CREATE TABLE `tarefas` (
 
 LOCK TABLES `tarefas` WRITE;
 /*!40000 ALTER TABLE `tarefas` DISABLE KEYS */;
-INSERT INTO `tarefas` VALUES (7,'Comprar Iogurte','2019-08-23','12:00:00','Teste',5,4),(8,'Estudar Matemática','2019-08-27','09:00:00','',4,2),(11,'Comprar Iogurte','2019-08-01','12:12:00','Activia',5,3),(12,'Comprar Pão','2019-08-16','13:13:00','',3,1),(13,'Estudar Geografia','2019-08-31','13:15:00','Estudar para a prova que será aplicada amanhã',3,2),(14,'Comprar Café','2019-08-31','09:09:00','Café Solúvel',5,4);
 /*!40000 ALTER TABLE `tarefas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,17 +103,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `cod` int NOT NULL AUTO_INCREMENT,
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
   `senha` varchar(150) NOT NULL,
-  `perfil_cod` int NOT NULL,
+  `perfil_cod` int(11) NOT NULL,
   PRIMARY KEY (`cod`),
   KEY `fk_usuario_perfil1_idx` (`perfil_cod`),
   CONSTRAINT `fk_usuario_perfil1` FOREIGN KEY (`perfil_cod`) REFERENCES `perfil_usuario` (`cod`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +122,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (3,'brendson','brendson@gmail.com','123456789',2),(4,'teste','teste@gmail.com','123456789',2),(5,'Administrador','admin@gmail.com','123456789',1);
+INSERT INTO `usuario` VALUES (6,'brendson','brendson.net@gmail.com','e10adc3949ba59abbe56e057f20f883e',2),(7,'admin','admin@gmail.com','21232f297a57a5a743894a0e4a801fc3',1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -137,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-27 18:02:48
+-- Dump completed on 2022-07-05 13:11:14
