@@ -2,7 +2,11 @@
 require_once("./bloqueio.php");
 
 $cod = $_SESSION['cod'];
-$sql = "SELECT * FROM tarefas WHERE usuario_cod = $cod ORDER BY data ASC";
+if ($_SESSION['perfil'] != 1) {
+  $sql = "SELECT * FROM tarefas WHERE usuario_cod = $cod ORDER BY data ASC";
+} else {
+  $sql = "SELECT * FROM tarefas t, usuario u WHERE t.usuario_cod = u.cod ORDER BY data ASC";
+}
 
 $result_tarefas = mysqli_query($con, $sql);
 ?>
@@ -22,6 +26,7 @@ $result_tarefas = mysqli_query($con, $sql);
 
   <table border = "1">
     <tr>
+      <td>Usuario</td>
       <td>Titulo</td>
       <td>Data</td>
       <td>Hora</td>
@@ -29,6 +34,7 @@ $result_tarefas = mysqli_query($con, $sql);
     </tr>
     <?php foreach ($result_tarefas as $tarefa){ ?>
     <tr>
+      <td><?= $tarefa['nome'] ?></td>
       <td><?= $tarefa['titulo'] ?></td>
       <td><?= date("d/m/Y", strtotime($tarefa['data'])); ?></td>
       <td><?= $tarefa['hora'] ?></td>
