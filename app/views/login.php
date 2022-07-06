@@ -19,16 +19,45 @@ if(isset($_GET['msg'])){
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Controle de Tarefas</title>
+
+  <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
+  />
+
 </head>
 <body>
-  <h3>Login</h3>
-  <form action="../core/verifica_login.php" method="post">
-    <input type="text" name="login"> <br>
-    <input type="password" name="senha"> <br>
-    <button>Enviar</button>
-    <span><?php echo $msg; ?></span>
-  </form>
+  <main class="container">
+  <form action="../core/verifica_login.php" method="post" class="row">
+    <div class="col offset-m3 m6 s12">
+     <h3 class="indigo-text center">Login</h3>
+    </div>
 
-  <a href="./cadastro.php">Cadastre-se</a>
+    <div class="input-field col offset-m3 m6 s12">
+      <input type="text" name="login" id="login">
+      <label for="login" class="active">E-mail</label> 
+    </div>
+
+    <div class="input-field col offset-m3 m6 s12">
+      <input type="password" name="senha" id="senha">
+      <label for="senha" class="active">Senha</label>   
+    </div>
+
+    <div class="input-field col offset-m3 m6 s12">
+      <span id="error"><?php echo $erro; ?></span> <br>
+      <button class="waves-effect waves-light btn indigo darken-4">Enviar</button> 
+      
+    </div>
+
+    <div class="col offset-m3 m6 s12">
+      <p>Ainda não tem cadastro ? <a href="cadastro.php">Cadastre-se</a></p>
+    </div>
+  </form>
+  </main>
 </body>
 </html>
