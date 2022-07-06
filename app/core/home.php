@@ -2,10 +2,17 @@
 require_once("./bloqueio.php");
 
 $cod = $_SESSION['cod'];
+
+if(isset($_GET['busca'])){
+  $busca = $_GET['busca'];
+}else{
+  $busca = '';
+}
+
 if ($_SESSION['perfil'] != 1) {
-  $sql = "SELECT *,t.cod as codt FROM tarefas WHERE usuario_cod = $cod ORDER BY data ASC";
+  $sql = "SELECT *, t.cod AS codt FROM tarefas t WHERE usuario_cod = $cod AND (titulo LIKE '%$busca%' OR descricao LIKE '%$busca%') ORDER BY DATA, hora ASC";
 } else {
-  $sql = "SELECT *, u.cod as codu, t.cod as codt FROM tarefas t, usuario u WHERE t.usuario_cod = u.cod ORDER BY data ASC";
+  $sql = "SELECT *, u.cod AS codu, t.cod AS codt FROM tarefas t, usuario u WHERE t.usuario_cod = u.cod  AND (titulo LIKE '%$busca%' OR descricao LIKE '%$busca%' OR  u.nome LIKE '%$busca%')ORDER BY DATA, hora ASC";
 }
 
 $result_tarefas = mysqli_query($con, $sql);
@@ -22,7 +29,12 @@ $result_tarefas = mysqli_query($con, $sql);
 <body>
   <a href="../views/cadastro_tarefa.php">Cadastrar Tarefa</a>
   <a href="../core/home.php">Listar Tarefas</a> 
-  <a href="../core/sair.php">Sair</a><br>
+  <a href="../core/sair.php">Sair</a><br><br>
+  
+  <form action="">
+    <input type="text" name="busca" placeholder="digite para buscar">
+    <button>ir</button>
+  </form>
 
   <table border = "1">
     <tr>
