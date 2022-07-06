@@ -57,7 +57,7 @@ $result_tarefas = mysqli_query($con, $sql);
       ?>
       <td><?= $tarefa['nome'] ?></td>
       <?php } ?>
-      <td><?= $tarefa['titulo'] ?></td>
+      <td><a href="../views/visualizar_tarefa.php?cod=<?= $tarefa['codt']?>"><?= $tarefa['titulo'] ?></a></td>
       <td><?= date("d/m/Y", strtotime($tarefa['data'])); ?></td>
       <td><?= $tarefa['hora'] ?></td>
       <?php 
