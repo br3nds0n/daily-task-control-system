@@ -39,8 +39,6 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 [Git](https://git-scm.com), [php](https://www.php.net/), [MySQL](https://www.mysql.com/) e o servidor [Apache2](https://httpd.apache.org/).
 Além disso, é bom ter um editor para trabalhar com código como [VSCode](https://code.visualstudio.com/).
 
-⚠️ Para usar as funcionalidades dessa aplicação é necessário o [back-end](https://github.com/br3nds0n/blue-schedule-backend) rodando em sua máquina
-
 ### 💻 setup
 
 ```php
