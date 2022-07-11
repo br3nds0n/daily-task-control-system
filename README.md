@@ -2,7 +2,7 @@
 
 Bem-vindo(a).
 
-Olá, como vai?! Meu nome é [Brendson](https://github.com/br3nds0n) sou o autor deste projeto de teste, que mostra um pouco do meu desenvolvimento web com PHP. Venho por meio desta opção mostrar um pouco do que aprendi. Espero que você goste!!
+Olá, como vai?! Meu nome é [Brendson](https://github.com/br3nds0n) sou o autor deste projeto de teste, que mostra um pouco do meu desenvolvimento web com `PHP`. Venho por meio desta opção mostrar um pouco do que aprendi. Espero que você goste!!
 
 Vamos ao projeto!!  🚀
 
@@ -36,7 +36,7 @@ Vamos ao projeto!!  🚀
 ## 📥 download
 
 Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
-[Git](https://git-scm.com), [php](https://www.php.net/),[MySQL](https://www.mysql.com/) e o servidor [Apache2](https://httpd.apache.org/).
+[Git](https://git-scm.com), [php](https://www.php.net/), [MySQL](https://www.mysql.com/) e o servidor [Apache2](https://httpd.apache.org/).
 Além disso, é bom ter um editor para trabalhar com código como [VSCode](https://code.visualstudio.com/).
 
 ⚠️ Para usar as funcionalidades dessa aplicação é necessário o [back-end](https://github.com/br3nds0n/blue-schedule-backend) rodando em sua máquina
