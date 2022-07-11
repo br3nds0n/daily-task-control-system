@@ -18,7 +18,7 @@
 </head>
 <body>
   <main class="container">
-  <form action="../controller/cadastro_user.php" method="post" id="form_cadastro" class="row">
+  <form action="../controller/cadastro_user.php" method="post" id="form_cadastro" class="row container">
   <div class="col offset-m3 m6 s12">
     <h3 class="indigo-text center">Cadastro</h3>
   </div>

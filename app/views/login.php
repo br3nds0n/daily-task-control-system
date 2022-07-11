@@ -26,14 +26,14 @@ if(isset($_GET['msg'])){
     />
 
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
   />
 
 </head>
 <body>
   <main class="container">
-  <form action="../core/verifica_login.php" method="post" class="row">
+  <form action="../core/verifica_login.php" method="post" class="row container">
     <div class="col offset-m3 m6 s12">
      <h3 class="indigo-text center">Login</h3>
     </div>
