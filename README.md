@@ -61,7 +61,7 @@ $ code .
 ```php
 # aplicação rodando em:
   - Local: http://localhost/daily-task-control-system
-  - Network: http://192.168.1.14/daily-task-control-system
+  - Network: http://127.0.0.1/daily-task-control-system
 ```
 
 <br>
